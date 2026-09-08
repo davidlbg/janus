@@ -1,2 +1,2 @@
-# janus
+# JANUS
 Joint Adversarial Neural/User Screening
