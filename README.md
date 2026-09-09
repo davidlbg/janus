@@ -39,19 +39,23 @@ JANUS reverses it:
 
 JANUS does not require every challenge to have a correct answer. It studies the **conditional distribution of decisions** made by humans and artificial systems.
 
-For challenge \(C\), response \(R\), and interaction history \(h\):
+For challenge $C$, response $R$, and interaction history $h$:
 
-\[
+$$
+
 P_H(R \mid C,h)
 \qquad \text{vs.} \qquad
 P_A(R \mid C,h)
-\]
+
+$$
 
 The central research hypothesis is that some carefully constructed challenge families may preserve useful divergence:
 
-\[
+$$
+
 D\!\left(P_H(R\mid C,h),P_A(R\mid C,h)\right) > \delta
-\]
+
+$$
 
 even when an artificial agent knows what JANUS is trying to measure.
 
@@ -112,14 +116,16 @@ flowchart TD
 
 A baseline evidence model can use a weighted sequential log-likelihood ratio:
 
-\[
+$$
+
 L_n =
 \sum_{i=1}^{n}
 w_i
 \log
 \frac{P(R_i\mid A,C_i,h_i)}
      {P(R_i\mid H,C_i,h_i)}
-\]
+
+$$
 
 Later adaptive selection may choose challenges by expected information gain rather than fixed ordering.
 
@@ -315,19 +321,23 @@ JANUS starts with interpretable statistics.
 
 For example:
 
-\[
+$$
+
 JSD(P_H,P_A)
 =
 \frac{1}{2}D_{KL}(P_H\|M)
 +
 \frac{1}{2}D_{KL}(P_A\|M)
-\]
+
+$$
 
 where:
 
-\[
+$$
+
 M=\frac{P_H+P_A}{2}
-\]
+
+$$
 
 ### Classifier diagnostics
 
@@ -346,11 +356,13 @@ M=\frac{P_H+P_A}{2}
 
 Rejecting real humans is one of the most important failure modes.
 
-If zero false positives are observed in \(n\) independent human observations, a useful rough diagnostic is the rule of three:
+If zero false positives are observed in $n$ independent human observations, a useful rough diagnostic is the rule of three:
 
-\[
+$$
+
 p_{\text{upper}} \approx \frac{3}{n}
-\]
+
+$$
 
 Therefore:
 
@@ -544,17 +556,21 @@ JANUS has a theoretical endpoint.
 
 If every observable interaction becomes equally distributed for humans and artificial agents:
 
-\[
+$$
+
 P(X\mid H)=P(X\mid A)
-\]
+
+$$
 
 then:
 
-\[
-TV(P_H,P_A)=0
-\]
+$$
 
-No classifier operating only on \(X\) can reliably distinguish them.
+TV(P_H,P_A)=0
+
+$$
+
+No classifier operating only on $X$ can reliably distinguish them.
 
 That is the **JANUS Limit**.
 
