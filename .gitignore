@@ -1,0 +1,35 @@
+# Research data and local analytical state
+research/data/raw/*
+research/data/derived/*
+research/data/reports/*
+research/data/manifests/*
+!research/data/raw/.gitkeep
+!research/data/derived/.gitkeep
+!research/data/reports/.gitkeep
+!research/data/manifests/.gitkeep
+*.duckdb
+*.duckdb.wal
+*.parquet
+
+# Provider outputs and secrets
+research/provider-output/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+dist/
+build/
+*.egg-info/
+
+# Generated reports/plots
+research/experiments/*/artifacts/

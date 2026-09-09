@@ -1,0 +1,37 @@
+experiment_id: exp001_signal
+protocol_version: "0.1"
+hypothesis: "H1 exploratory: at least one family contains reproducible response divergence"
+analysis_tier: E
+challenge_families:
+  SEM: SEM_v1
+  VIS: VIS_v1
+  FREE: FREE_v1
+human_split_policy:
+  discovery: 0.60
+  validation: 0.30
+  holdout: 0.10
+challenge_split_policy:
+  discovery: 0.60
+  validation: 0.30
+  holdout: 0.10
+model_split_policy:
+  discovery: 0.60
+  validation: 0.30
+  holdout: 0.10
+temporal_wave: T0
+model_conditions: [M0, M1, M2]
+primary_metrics: [jsd, total_variation, mutual_information, roc_auc, human_fpr, ai_tpr, brier_score]
+random_seed: 240917
+challenge_count_per_family: 30
+synthetic_sessions_per_population: 60
+scorer:
+  smoothing: 1.0
+  human_log_threshold: -2.0
+  ai_log_threshold: 2.0
+declared_human_fpr_target: null
+confirmatory: false
+data_kind: synthetic
+status: draft
+created_at: "2026-09-08T00:00:00Z"
+updated_at: "2026-09-08T00:00:00Z"
+content_hash: null

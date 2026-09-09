@@ -1,0 +1,88 @@
+experiment_id: exp001a_real_signal_pilot
+protocol_version: "0.1"
+hypothesis: "Exploratory: real human and model response distributions contain divergence worth preregistering"
+analysis_tier: E
+challenge_families:
+  SEM: SEM_v1
+  VIS: VIS_v1
+  FREE: FREE_v1
+human_split_policy:
+  discovery: 0.70
+  validation: 0.30
+  holdout: 0.0
+challenge_split_policy:
+  discovery: 0.70
+  validation: 0.30
+  holdout: 0.0
+model_split_policy:
+  discovery: 0.50
+  validation: 0.50
+  holdout: 0.0
+temporal_wave: PILOT_T0
+model_conditions: [M0, M1, M2]
+model_condition_parameters:
+  M0: {temperature: 0.0, top_p: 1.0}
+  M1: {temperature: 1.0, top_p: 1.0}
+  M2: {temperature: 1.0, top_p: 1.0}
+primary_metrics:
+  [jsd, total_variation, mutual_information, entropy, conditional_entropy,
+   roc_auc, pr_auc, human_fpr, ai_tpr, brier_score]
+random_seed: 240919
+challenge_count_per_family: 24
+synthetic_sessions_per_population: 60
+samples_per_challenge_per_condition: 3
+provider_targets:
+  - provider: openai_responses
+    model_identifier: NEEDS_DECISION
+    credential_env: OPENAI_API_KEY
+    enabled: false
+    provider_reported_version: null
+    estimated_input_tokens: null
+    estimated_output_tokens: null
+    input_cost_per_million: null
+    output_cost_per_million: null
+  - provider: anthropic_messages
+    model_identifier: NEEDS_DECISION
+    credential_env: ANTHROPIC_API_KEY
+    enabled: false
+    provider_reported_version: null
+    estimated_input_tokens: null
+    estimated_output_tokens: null
+    input_cost_per_million: null
+    output_cost_per_million: null
+consent_document_version: NEEDS_HUMAN_REVIEW
+retention_policy: exclude_and_preserve_pending_review
+max_model_calls_without_confirmation: 100
+exclusion_criteria: [NEEDS_DECISION]
+abandonment_criteria: [NEEDS_DECISION]
+threshold_selection_procedure: exploratory_manifest_threshold_not_final
+pilot_decision_rules: null
+participant_target: null
+sessions_per_participant: null
+challenges_per_session: null
+budget_cap_usd: null
+launch_approvals:
+  consent: NEEDS_HUMAN_REVIEW
+  retention: NEEDS_DECISION
+  recruitment: NEEDS_DECISION
+  human_sample: NEEDS_DECISION
+  exclusions: NEEDS_DECISION
+  models: NEEDS_DECISION
+  model_modalities: NEEDS_DECISION
+  model_conditions: NEEDS_DECISION
+  sampling: NEEDS_DECISION
+  budget: NEEDS_DECISION
+  decision_rules: NEEDS_DECISION
+  stopping_rules: NEEDS_DECISION
+  manifest_review: NEEDS_DECISION
+scorer:
+  smoothing: 1.0
+  human_log_threshold: -2.0
+  ai_log_threshold: 2.0
+declared_human_fpr_target: null
+confirmatory: false
+data_kind: real_exploratory
+status: draft
+created_at: "2026-09-08T00:00:00Z"
+updated_at: "2026-09-08T00:00:00Z"
+content_hash: null
